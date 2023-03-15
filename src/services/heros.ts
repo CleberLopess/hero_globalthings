@@ -1,31 +1,51 @@
 import requestAxios from "./api";
 
-export const getHeros = async () => {
-  const { data } = await requestAxios.get("/Heroes");
+export const getHeroes = async () => {
+  try {
+    const { data } = await requestAxios.get("/Heroes");
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const postHeros = async () => {
-  const { data } = await requestAxios.post("/Heroes");
+export const postHeroes = async () => {
+  try {
+    const { data } = await requestAxios.post("/Heroes");
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const deleteHeros = async (id: number) => {
-  const { data } = await requestAxios.post(`/Heroes/${id}`);
+export const deleteHeroes = async (id: number) => {
+  try {
+    const { data } = await requestAxios.post(`/Heroes/${id}`);
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const getHerosById = async (id: number) => {
-  const { data } = await requestAxios.get(`/Heroes/${id}`);
+export const getHeroesById = async (id: number) => {
+  try {
+    const { data } = await requestAxios.get(`/Heroes/${id}`);
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const putHeros = async (id: number) => {
-  const { data } = await requestAxios.get(`/Heroes/${id}`);
+export const putHeroes = async (id: number) => {
+  try {
+    const { data } = await requestAxios.get(`/Heroes/${id}`);
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };

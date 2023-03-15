@@ -2,13 +2,18 @@ import * as S from "./styles";
 
 import { ItemListHero } from "components/itemListHero";
 import { Modal } from "components/modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 
 export const AddedHero = () => {
   const [showModal, setShowModal] = useState(true);
+  const [image, setImage] = useState("");
   const router = useRouter();
+
+  useEffect(() => {
+    setImage(`images/heroi_0${Math.floor(Math.random() * 4)}.jpg`);
+  }, []);
 
   const methods = useForm({
     mode: "onChange",
@@ -84,7 +89,7 @@ export const AddedHero = () => {
                 router.push(`heroi/${dataHeroes.id}`);
               }}
               Heroes={dataHeroes}
-              image={`images/heroi_0${Math.floor(Math.random() * 4)}.jpg`}
+              image={image}
             />
           </S.ItemList>
         </S.ContentList>

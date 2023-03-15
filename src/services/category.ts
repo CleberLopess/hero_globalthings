@@ -1,31 +1,51 @@
 import requestAxios from "./api";
 
 export const getCategory = async () => {
-  const { data } = await requestAxios.get("/Category");
+  try {
+    const { data } = await requestAxios.get("/Category");
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const postCategory = async () => {
-  const { data } = await requestAxios.post("/Category");
+  try {
+    const { data } = await requestAxios.post("/Category");
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const deleteCategory = async (id: number) => {
-  const { data } = await requestAxios.post(`/Category/${id}`);
+  try {
+    const { data } = await requestAxios.post(`/Category/${id}`);
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getCategoryById = async (id: number) => {
-  const { data } = await requestAxios.get(`/Category/${id}`);
+  try {
+    const { data } = await requestAxios.get(`/Category/${id}`);
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const putCategory = async (id: number) => {
-  const { data } = await requestAxios.get(`/Category/${id}`);
+  try {
+    const { data } = await requestAxios.get(`/Category/${id}`);
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };

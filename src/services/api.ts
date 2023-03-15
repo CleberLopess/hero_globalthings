@@ -4,14 +4,13 @@ const token = "394772d23dfb455a9fc5ee31ce8ee53a";
 
 export const headers = {
   headers: {
-    // "Content-Type": "application/json",
-    // s_token: `Bearer ${token}`,
-    token,
+    "Content-Type": "application/json",
+    accessKey: `${token}`,
   },
 };
 
 export const config: AxiosRequestConfig = {
-  baseURL: "https://heroes.globalthings.net/swagger/ui/index",
+  baseURL: "https://heroes.globalthings.net/api",
   headers: headers.headers,
 };
 
