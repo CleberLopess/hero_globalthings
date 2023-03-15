@@ -1,8 +1,12 @@
+import { AddedCatecory } from "sections/addedCategory";
+import { Header } from "sections/header";
+
 const RegisterCategory = () => {
   return (
-    <div>
-      <p></p>
-    </div>
+    <>
+      <Header activeButtons={false} />
+      <AddedCatecory />
+    </>
   );
 };
 

@@ -1,65 +1,34 @@
 import styled from "styled-components";
 
 export const Content = styled.section`
+  background-color: #fefefe;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding-top: 20px;
+  margin-top: 10px !important ;
+  border-radius: 10px;
 `;
 
-export const ContentTitleAndButton = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const TitleList = styled.h2``;
-
-export const ButtonAdded = styled.button`
-  border-radius: 4px;
-  padding: 5px;
-  background-color: #00a1ff;
-  color: #fefefe;
-
-  :hover {
-    background-color: #0681c9;
-  }
-`;
-
-export const ContentList = styled.ul`
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-export const ItemList = styled.li``;
-
-//Styles modal
-export const ContentModal = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-export const TitleForm = styled.h2`
+export const Title = styled.h2`
   font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
 `;
 
-export const Form = styled.form`
+export const From = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const ContentInput = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
+  gap: 10px;
 `;
 
 export const TitleInput = styled.h4`
-  font-size: 1.2em;
+  font-size: 1.4em;
 `;
 
 export const Input = styled.input`
@@ -74,7 +43,7 @@ export const Input = styled.input`
 
 export const ContentButtons = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const ButtonSaved = styled.button`

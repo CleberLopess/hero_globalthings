@@ -1,4 +1,4 @@
-import { FormProvider, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 import * as S from "./styles";
 
@@ -22,7 +22,7 @@ export const LoginPage = () => {
       <S.Content>
         <S.Box>
           <S.Title>
-            Entrar no HEROS <br />
+            Entrar no HERÓIS <br />
           </S.Title>
 
           <S.Form onSubmit={onSubmit}>
