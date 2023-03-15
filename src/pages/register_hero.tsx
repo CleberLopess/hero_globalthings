@@ -1,7 +1,11 @@
+import { Header } from "sections/header";
+import { AddedHero } from "sections/addedHero";
+
 const RegisterHero = () => {
   return (
     <div>
-      <p></p>
+      <Header activeButtons={false} />
+      <AddedHero />
     </div>
   );
 };

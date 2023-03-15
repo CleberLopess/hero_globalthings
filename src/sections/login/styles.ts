@@ -83,5 +83,5 @@ export const Button = styled.button`
 `;
 
 export const Continue = styled.a`
-  color: blue;
+  color: #0000ff;
 `;

@@ -16,7 +16,7 @@ export const ContentHeroes = () => {
       <S.Content>
         <CardHeroes
           handleClickCard={() => {
-            router.push(`/hero_${dataHeroes.id}`);
+            router.push(`heroi/${dataHeroes.id}`);
           }}
           Heroes={dataHeroes}
           image={`images/heroi_0${Math.floor(Math.random() * 4)}.jpg`}

@@ -8,7 +8,7 @@ export const Header = ({ activeButtons }: IHeader) => {
   return (
     <S.Wrapper>
       <S.Content>
-        <S.Title onClick={() => router.push("/")}>HEROES</S.Title>
+        <S.Title onClick={() => router.push("/")}>HERÓIS</S.Title>
         {activeButtons && (
           <S.ContentButtons>
             <S.Button onClick={() => router.push("/register_hero")}>

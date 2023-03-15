@@ -8,13 +8,11 @@ export const Content = styled.div`
   background-color: #fefefe;
   border-radius: 10px;
   padding: 10px;
+  width: 100%;
 
-  max-width: 300px;
   gap: 20px;
   display: flex;
-  flex-direction: column;
-  margin-top: 100px;
-
+  height: 100px;
   transition: all 0.2s ease-in;
 
   :hover {
@@ -24,30 +22,36 @@ export const Content = styled.div`
   }
 `;
 
-export const ContentId = styled.div`
+export const Image = styled.img`
   display: flex;
+`;
+
+export const ContentInfo = styled.div`
+  display: flex;
+  font-size: 1.2em;
+  flex-direction: column;
   justify-content: space-between;
 `;
 
-export const HeroesId = styled.p`
-  color: #0000ff;
-`;
-
-export const CategoryId = styled.p`
-  color: #008000;
-`;
-
-export const Image = styled.img`
+export const ContentId = styled.div`
   display: flex;
-  width: 100%;
+  gap: 20px;
 `;
 
-export const Name = styled.h2`
+export const NameHero = styled.h4`
   font-size: 1.2em;
   text-transform: uppercase;
 `;
 
-export const Active = styled.p<IProp>`
+export const IDHero = styled.p`
+  color: #0000ff;
+`;
+
+export const IDCategory = styled.p`
+  color: #008000;
+`;
+
+export const TagActived = styled.div<IProp>`
   background-color: ${({ active }) => (active ? "#54d373" : "#ff495a")};
   display: flex;
   margin: 0 0 auto auto;

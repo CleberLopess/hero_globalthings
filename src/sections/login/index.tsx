@@ -13,7 +13,9 @@ export const LoginPage = () => {
 
   const { handleSubmit, register } = methods;
 
-  const onSubmit = handleSubmit((data) => {});
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+  });
 
   return (
     <S.Wrapper>

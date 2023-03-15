@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.header`
   width: 100%;
-  position: absolute;
+  position: sticky;
   top: 0;
   z-index: 3;
   padding: 10px;

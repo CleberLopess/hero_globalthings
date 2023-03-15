@@ -1,10 +1,7 @@
-import React from 'react';
-import * as S from './styled';
+import React from "react";
+import { ILayout } from "./ILayout";
+import * as S from "./styled";
 
-interface IProps {
-	children: React.ReactNode;
-}
-
-export const Layout = ({ children }: IProps) => {
-	return <S.Wrapper>{children}</S.Wrapper>;
+export const Layout = ({ children }: ILayout) => {
+  return <S.Wrapper>{children}</S.Wrapper>;
 };
