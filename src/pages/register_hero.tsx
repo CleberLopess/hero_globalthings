@@ -1,13 +1,5 @@
-import { Header } from "sections/header";
-import { AddedHero } from "sections/addedHero";
+import { RegisterHeroScreen } from "screens/registerHero";
 
-const RegisterHero = () => {
-  return (
-    <div>
-      <Header activeButtons={false} />
-      <AddedHero />
-    </div>
-  );
-};
+const RegisterHero = () => <RegisterHeroScreen />;
 
 export default RegisterHero;

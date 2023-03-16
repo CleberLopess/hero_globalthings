@@ -6,7 +6,7 @@ import { IHero } from "./IHero";
 import * as S from "./styles";
 
 export const Hero = ({ IDHero }: IHero) => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const router = useRouter();
 
   const methods = useForm({

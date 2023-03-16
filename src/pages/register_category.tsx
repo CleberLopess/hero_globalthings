@@ -1,13 +1,5 @@
-import { AddedCatecory } from "sections/addedCategory";
-import { Header } from "sections/header";
+import { RegisterCategoryScreen } from "screens/registerCategory";
 
-const RegisterCategory = () => {
-  return (
-    <>
-      <Header activeButtons={false} />
-      <AddedCatecory />
-    </>
-  );
-};
+const RegisterCategory = () => <RegisterCategoryScreen />;
 
 export default RegisterCategory;

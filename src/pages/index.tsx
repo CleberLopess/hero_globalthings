@@ -1,13 +1,5 @@
-import { ContentHeroes } from "sections/contentHeroes";
-import { Header } from "sections/header";
+import Main from "screens/main";
 
-const Home = () => {
-  return (
-    <div>
-      <Header activeButtons />
-      <ContentHeroes />
-    </div>
-  );
-};
+const Home = () => <Main />;
 
 export default Home;

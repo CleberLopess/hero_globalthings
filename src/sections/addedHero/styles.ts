@@ -66,9 +66,14 @@ export const Input = styled.input`
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #bfbfbf;
+  width: 100%;
 
   :focus {
     outline: none;
+  }
+
+  &[type="checkbox"] {
+    width: fit-content;
   }
 `;
 

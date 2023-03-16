@@ -1,11 +1,5 @@
-import { LoginPage } from "sections/login";
+import { LoginPage } from "screens/login";
 
-const Login = () => {
-  return (
-    <>
-      <LoginPage />
-    </>
-  );
-};
+const Login = () => <LoginPage />;
 
 export default Login;
