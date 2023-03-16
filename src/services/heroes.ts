@@ -1,18 +1,22 @@
 import requestAxios from "./api";
+import { IPost } from "./interfaces/IHeroes";
 
 export const getHeroes = async () => {
   try {
-    const { data } = await requestAxios.get("/Heroes");
-
+    const data = await requestAxios.get("/Heroes");
     return data;
   } catch (error) {
     console.log(error);
   }
 };
 
-export const postHeroes = async () => {
+export const postHeroes = async (post: IPost) => {
   try {
-    const { data } = await requestAxios.post("/Heroes");
+    const data = await requestAxios.post("/Heroes", {
+      body: post,
+    });
+
+    console.log(data);
 
     return data;
   } catch (error) {

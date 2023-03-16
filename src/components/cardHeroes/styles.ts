@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface IProp {
-  active: boolean;
+  active?: boolean;
 }
 
 export const Content = styled.div`
@@ -9,7 +9,7 @@ export const Content = styled.div`
   border-radius: 10px;
   padding: 10px;
 
-  max-width: 300px;
+  width: 300px;
   gap: 20px;
   display: flex;
   flex-direction: column;
@@ -40,6 +40,7 @@ export const CategoryId = styled.p`
 export const Image = styled.img`
   display: flex;
   width: 100%;
+  height: 280px;
 `;
 
 export const Name = styled.h2`
@@ -50,7 +51,7 @@ export const Name = styled.h2`
 export const Active = styled.p<IProp>`
   background-color: ${({ active }) => (active ? "#54d373" : "#ff495a")};
   display: flex;
-  margin: 0 0 auto auto;
+  margin: 0 0 0 auto;
   border-radius: 8px;
   padding: 5px;
   color: #fefefe;

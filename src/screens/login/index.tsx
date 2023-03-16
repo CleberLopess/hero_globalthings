@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-
 import * as S from "./styles";
 
 export const LoginPage = () => {
@@ -13,9 +12,7 @@ export const LoginPage = () => {
 
   const { handleSubmit, register } = methods;
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
-  });
+  const onSubmit = handleSubmit((data) => {});
 
   return (
     <S.Wrapper>

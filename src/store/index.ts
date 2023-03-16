@@ -5,12 +5,12 @@ import {
 } from "react-redux";
 
 //reducers
-import { herosReducer } from "./slices/heros";
+import { heroesReducer } from "./slices/heroes";
 import { categoryReducer } from "./slices/category";
 
 export const store = configureStore({
   reducer: {
-    heros: herosReducer,
+    heroes: heroesReducer,
     category: categoryReducer,
   },
 });

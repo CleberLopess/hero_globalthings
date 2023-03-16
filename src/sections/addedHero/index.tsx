@@ -2,18 +2,16 @@ import * as S from "./styles";
 
 import { ItemListHero } from "components/itemListHero";
 import { Modal } from "components/modal";
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
+import { useSelector } from "store";
+import { postHeroes } from "services/heroes";
 
 export const AddedHero = () => {
   const [showModal, setShowModal] = useState(false);
-  const [image, setImage] = useState("");
   const router = useRouter();
-
-  useEffect(() => {
-    setImage(`images/heroi_0${Math.floor(Math.random() * 4)}.jpg`);
-  }, []);
+  const { category, heroes } = useSelector((state) => state);
 
   const methods = useForm({
     mode: "onChange",
@@ -24,17 +22,28 @@ export const AddedHero = () => {
     },
   });
 
+  const getOptionsCategory = () => {
+    return category.category.map((item) => {
+      return (
+        <option key={item.Id} value={item.Name}>
+          {item.Name}
+        </option>
+      );
+    });
+  };
+
   const { handleSubmit, register } = methods;
 
   const onSubmit = (data: any) => {
-    console.log("data", data);
-  };
+    console.log(data);
 
-  const dataHeroes = {
-    active: true,
-    categoryId: 0,
-    id: 0,
-    name: "heroi 01",
+    const contentParam = {
+      Name: data.name,
+      Category: data.category,
+      Active: data.actived,
+    };
+
+    postHeroes(contentParam);
   };
 
   const handleClickCloseModal = () => {
@@ -44,6 +53,22 @@ export const AddedHero = () => {
   const handleClickAddedHero = () => {
     setShowModal(true);
   };
+
+  const getListHero = useCallback(() => {
+    return heroes.heroes.map((item) => {
+      return (
+        <S.ItemList key={item.Id}>
+          <ItemListHero
+            handleClickCard={() => {
+              router.push(`heroi/${item.Id}`);
+            }}
+            Heroes={item}
+            image={`images/heroi_0${Math.floor(Math.random() * 4)}.jpg`}
+          />
+        </S.ItemList>
+      );
+    });
+  }, [heroes.heroes, router]);
 
   return (
     <>
@@ -58,7 +83,9 @@ export const AddedHero = () => {
               </S.ContentInput>
               <S.ContentInput>
                 <S.TitleInput>Categoria</S.TitleInput>
-                <S.Input {...register("category")}></S.Input>
+                <S.Select {...register("category")}>
+                  {getOptionsCategory()}
+                </S.Select>
               </S.ContentInput>
               <S.ContentInput>
                 <S.TitleInput>herói ativo ?</S.TitleInput>
@@ -82,17 +109,7 @@ export const AddedHero = () => {
             Adicionar herói
           </S.ButtonAdded>
         </S.ContentTitleAndButton>
-        <S.ContentList>
-          <S.ItemList>
-            <ItemListHero
-              handleClickCard={() => {
-                router.push(`heroi/${dataHeroes.id}`);
-              }}
-              Heroes={dataHeroes}
-              image={image}
-            />
-          </S.ItemList>
-        </S.ContentList>
+        <S.ContentList>{getListHero()}</S.ContentList>
       </S.Content>
     </>
   );

@@ -1,7 +1,7 @@
 import { IHeroes } from "./IHeroes";
 
 export interface ICategory {
-  id: number;
-  name: string;
-  Heroes: IHeroes;
+  Id?: string;
+  Name?: string;
+  Heroes?: IHeroes[];
 }

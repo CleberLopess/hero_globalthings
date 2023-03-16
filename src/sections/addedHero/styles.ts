@@ -77,6 +77,14 @@ export const Input = styled.input`
   }
 `;
 
+export const Select = styled.select`
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  width: 100%;
+  background-color: transparent;
+`;
+
 export const ContentButtons = styled.div`
   display: flex;
   gap: 20px;

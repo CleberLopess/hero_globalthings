@@ -14,9 +14,7 @@ export const AddedCatecory = () => {
 
   const { handleSubmit, register } = methods;
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
-  });
+  const onSubmit = handleSubmit((data) => {});
 
   return (
     <S.Content>

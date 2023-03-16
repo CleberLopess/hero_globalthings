@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface IProp {
-  active: boolean;
+  active?: boolean;
 }
 
 export const Content = styled.div`

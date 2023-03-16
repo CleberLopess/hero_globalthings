@@ -4,26 +4,25 @@ import { ICategory, ICategoryState } from "../../interfaces/ICategory";
 
 const INITIAL_STATE: ICategoryState = {
   isLoading: false,
-  category: {
-    id: "",
-    name: "",
-  },
+  category: [
+    {
+      Id: "",
+      Name: "",
+    },
+  ],
 };
 
 export const slice = createSlice({
   name: "category",
   initialState: INITIAL_STATE,
   reducers: {
-    setCategorySuccess(state, { payload }: PayloadAction<ICategory>) {
-      return { ...state, isLoading: false, events: payload };
+    setCategory(state, { payload }: PayloadAction<ICategory[]>) {
+      return { ...state, isLoading: false, category: payload };
     },
-    // clearHeros(state) {
-    //   return { ...state, isLoading: false };
-    // },
   },
 });
 
-export const { setCategorySuccess } = slice.actions;
+export const { setCategory } = slice.actions;
 
 export const selectcategory = (state: ICategoryState) => state;
 

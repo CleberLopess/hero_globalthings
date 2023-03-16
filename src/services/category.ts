@@ -2,7 +2,7 @@ import requestAxios from "./api";
 
 export const getCategory = async () => {
   try {
-    const { data } = await requestAxios.get("/Category");
+    const data = await requestAxios.get("/Category");
 
     return data;
   } catch (error) {

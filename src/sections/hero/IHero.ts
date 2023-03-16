@@ -1,3 +1,3 @@
 export interface IHero {
-  IDHero: string | string[] | undefined;
+  IDHero: string | string[];
 }

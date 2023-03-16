@@ -1,12 +1,12 @@
-import { IHeroes } from "./IHeros";
+import { IHeroes } from "./IHeroes";
 
 export interface ICategoryState {
-  category: ICategory;
+  category: ICategory[];
   isLoading: boolean;
 }
 
 export interface ICategory {
-  id: string;
-  name: string;
-  Heroes?: IHeroes;
+  Id?: string;
+  Name?: string;
+  Heroes?: IHeroes[];
 }
