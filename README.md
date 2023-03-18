@@ -1,4 +1,4 @@
-# Heŕois
+# Heróis
 
 ## Este projeto foi feito como teste para uma vaga de desenvolvedor front-end para a empresa GlobalThings. <br/><br/> A idéia foi criar um CRUD utilizando a própria API da GlobalThings, colocando em pratica, responsividade, boas praticas de programação e arquitetura de projeto
 
