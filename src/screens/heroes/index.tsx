@@ -30,8 +30,6 @@ export const HeroesScreen = () => {
 
   const editedHero = useCallback(
     async (hero: IHeroes) => {
-      console.log(hero);
-
       try {
         await putHeroes(parseInt(id as string), hero);
         // router.reload();
