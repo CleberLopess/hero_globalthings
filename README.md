@@ -1,38 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Heŕois
 
-## Getting Started
+## Este projeto foi feito como teste para uma vaga de desenvolvedor front-end para a empresa GlobalThings <br/> A idéia foi criar um CRUD utilizando a própria API da GlobalThings, colocando em pratica, responsividade da tela, boas praticas de programação e arquitetura de projeto
 
-First, run the development server:
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [React](https://pt-br.reactjs.org/)
+- [Next.JS](https://nextjs.org/)
+- [Redux](https://redux.js.org/)
+- [Styled-Components](https://styled-components.com/)
+- [React-hook-form](https://react-hook-form.com/api/useform/)
+
+### 🎲 Rodando o Back End (API)
+
+O consumo da API foi feito através do back-end do próprio Next.js para poder evitar o error de CORS utilizando o request normal.
+
+### 🎲 Rodando o Front-End
+
+Voce vai precisar somente rodar o projeto (instrução a baixo) feito isso, ele ja estará pronto para ser utilizado, qualuqer funcionalidade presente no site, esta funcionando corretamente.
+
+Instalar dependencias
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Rodar o projeto em ambiente de desenvolvimento
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Buildar o projeto
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+yarn build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Rodar o projeto após o build
 
-## Learn More
+```bash
+yarn start
+```
 
-To learn more about Next.js, take a look at the following resources:
+<h4 align="center"> 
+	🚧  Finalizado  🚧
+</h4>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<img src='src/img/eu.png'/><br/>
+<a href='https://github.com/CleberLopess'>Cleber Lopes</a>
+Feito com ❤️ por Cleber Lopes 👋🏽 Entre em contato!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Linkedin](https://www.linkedin.com/in/cleber-lopess/)
