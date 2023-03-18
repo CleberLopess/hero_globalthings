@@ -1,16 +1,27 @@
 import { Modal } from "components/modal";
 import { IHeroes } from "interfaces/IHeroes";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "store";
 import { IHero } from "./IHero";
 import * as S from "./styles";
 
-export const Hero = ({ IDHero }: IHero) => {
+export const Hero = ({
+  handleClickEditedHero,
+  handleClickExcluedHero,
+}: IHero) => {
   const [showModal, setShowModal] = useState(false);
-  const { heroes } = useSelector((state) => state);
-  const [heroCurrent, setHeroCurrent] = useState<IHeroes>();
+  const { heroes, category } = useSelector((state) => state);
+
+  const getOptionsCategory = () => {
+    return category.category.map((item) => {
+      return (
+        <S.Options key={item.Id} value={item.Name}>
+          {item.Name}
+        </S.Options>
+      );
+    });
+  };
 
   const methods = useForm({
     mode: "onChange",
@@ -23,7 +34,24 @@ export const Hero = ({ IDHero }: IHero) => {
 
   const { handleSubmit, register } = methods;
 
-  const onSubmit = (data: any) => {};
+  const onSubmit = (data: any) => {
+    const idCategory = category.category.find((item) => {
+      if (item.Name === data.category) {
+        return item.Id;
+      }
+    });
+
+    const heroEdit: IHeroes = {
+      Name: data.name,
+      Id: heroes.heroes[0].Id,
+      Category: data.category,
+      Active: data.actived,
+      CategoryId: idCategory?.Id,
+    };
+
+    handleClickEditedHero(heroEdit);
+    setShowModal(false);
+  };
 
   const handleClickCloseModal = () => {
     setShowModal(false);
@@ -32,14 +60,6 @@ export const Hero = ({ IDHero }: IHero) => {
   const handleClickEditHero = () => {
     setShowModal(true);
   };
-
-  const handleClickExclued = () => {};
-
-  useEffect(() => {
-    const hero = heroes.heroes.find((item) => item.Id == IDHero);
-
-    setHeroCurrent(hero);
-  }, [IDHero, heroes, heroes.heroes]);
 
   return (
     <>
@@ -54,7 +74,9 @@ export const Hero = ({ IDHero }: IHero) => {
               </S.ContentInput>
               <S.ContentInput>
                 <S.TitleInput>Categoria</S.TitleInput>
-                <S.Input {...register("category")}></S.Input>
+                <S.Select {...register("category")}>
+                  {getOptionsCategory()}
+                </S.Select>
               </S.ContentInput>
               <S.ContentInput>
                 <S.TitleInput>herói ativo ?</S.TitleInput>
@@ -74,7 +96,7 @@ export const Hero = ({ IDHero }: IHero) => {
       <S.Content>
         <S.ContentButtons>
           <S.ButtonEdited onClick={handleClickEditHero}>Editar</S.ButtonEdited>
-          <S.ButtonExclued onClick={handleClickExclued}>
+          <S.ButtonExclued onClick={handleClickExcluedHero}>
             Excluir
           </S.ButtonExclued>
         </S.ContentButtons>
@@ -84,15 +106,21 @@ export const Hero = ({ IDHero }: IHero) => {
           alt="hero"
         ></S.Image>
 
-        <S.Name>{heroCurrent?.Name}</S.Name>
+        <S.Name>{heroes.heroes[0]?.Name}</S.Name>
         <S.ContentDescriptions>
-          <S.IDHero>ID do herói: {heroCurrent?.Id}</S.IDHero>
-          {heroCurrent?.Category && (
-            <S.Category>Categoria: {heroCurrent?.Category}</S.Category>
-          )}
+          <S.IDHero>ID do herói: {heroes.heroes[0]?.Id}</S.IDHero>
+          <div>
+            <S.IDCategory>
+              ID da categoria: {heroes.heroes[0]?.CategoryId}
+            </S.IDCategory>
+
+            {heroes.heroes[0]?.Category && (
+              <S.Category>Categoria: {heroes.heroes[0]?.Category}</S.Category>
+            )}
+          </div>
         </S.ContentDescriptions>
-        <S.Tag active={heroCurrent?.Active}>
-          {heroCurrent?.Active ? "ativo" : "desativado"}
+        <S.Tag active={heroes.heroes[0]?.Active}>
+          {heroes.heroes[0]?.Active ? "ativo" : "desativado"}
         </S.Tag>
       </S.Content>
     </>

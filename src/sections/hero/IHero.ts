@@ -1,3 +1,6 @@
+import { IHeroes } from "interfaces/IHeroes";
+
 export interface IHero {
-  IDHero: string | string[];
+  handleClickEditedHero: (hero: IHeroes) => void;
+  handleClickExcluedHero: () => void;
 }

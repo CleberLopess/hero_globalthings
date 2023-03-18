@@ -4,9 +4,9 @@ export interface IHeroesState {
 }
 
 export interface IHeroes {
-  Id: string;
-  Name: string;
-  Active: boolean;
+  Id?: string;
+  Name?: string;
+  Active?: boolean;
   Category?: string;
   CategoryId?: string;
 }

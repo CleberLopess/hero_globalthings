@@ -6,9 +6,9 @@ import { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useSelector } from "store";
-import { postHeroes } from "services/heroes";
+import { IAddedHero } from "./IAddedHero";
 
-export const AddedHero = () => {
+export const AddedHero = ({ handleCreateHero }: IAddedHero) => {
   const [showModal, setShowModal] = useState(false);
   const router = useRouter();
   const { category, heroes } = useSelector((state) => state);
@@ -25,9 +25,9 @@ export const AddedHero = () => {
   const getOptionsCategory = () => {
     return category.category.map((item) => {
       return (
-        <option key={item.Id} value={item.Name}>
+        <S.Options key={item.Id} value={item.Name}>
           {item.Name}
-        </option>
+        </S.Options>
       );
     });
   };
@@ -35,15 +35,24 @@ export const AddedHero = () => {
   const { handleSubmit, register } = methods;
 
   const onSubmit = (data: any) => {
-    console.log(data);
+    const idCategory = category.category.find((item) => {
+      if (item.Name === data.category) {
+        return item.Id;
+      }
+    });
 
     const contentParam = {
       Name: data.name,
-      Category: data.category,
+      Category: {
+        name: data.category,
+      },
       Active: data.actived,
+      CategoryId: idCategory?.Id,
     };
 
-    postHeroes(contentParam);
+    setShowModal(false);
+
+    handleCreateHero(contentParam as any);
   };
 
   const handleClickCloseModal = () => {

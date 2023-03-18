@@ -16,7 +16,7 @@ export const ContentHeroes = () => {
           handleClickCard={() => {
             router.push(`heroi/${item.Id}`);
           }}
-          Heroes={item as any}
+          Heroes={item}
           image={`images/heroi_0${Math.floor(Math.random() * 4)}.jpg`}
         />
       );

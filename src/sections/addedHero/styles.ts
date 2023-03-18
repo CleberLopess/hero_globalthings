@@ -83,7 +83,10 @@ export const Select = styled.select`
   border: 1px solid #bfbfbf;
   width: 100%;
   background-color: transparent;
+  height: 100%;
 `;
+
+export const Options = styled.option``;
 
 export const ContentButtons = styled.div`
   display: flex;

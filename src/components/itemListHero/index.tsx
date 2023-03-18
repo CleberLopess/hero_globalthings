@@ -13,7 +13,11 @@ export const ItemListHero = ({
         <S.NameHero>{Heroes.Name}</S.NameHero>
         <S.ContentId>
           <S.IDHero>ID do herói: {Heroes.Id}</S.IDHero>
-          <S.IDCategory>categoria: {Heroes.Category}</S.IDCategory>
+          <S.IDCategory>ID da categoria: {Heroes.CategoryId}</S.IDCategory>
+
+          {Heroes.Category && (
+            <S.Category>categoria: {Heroes.Category}</S.Category>
+          )}
         </S.ContentId>
       </S.ContentInfo>
       <S.TagActived active={Heroes.Active}>

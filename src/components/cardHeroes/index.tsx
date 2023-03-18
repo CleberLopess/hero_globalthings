@@ -7,12 +7,16 @@ export const CardHeroes = ({ Heroes, image, handleClickCard }: ICardHeroes) => {
     <S.Content onClick={handleClickCard}>
       <S.ContentId>
         <S.HeroesId>ID do herói: {Heroes.Id}</S.HeroesId>
-        {Heroes.Category && (
-          <S.CategoryId>categoria: {Heroes.Category?.name}</S.CategoryId>
-        )}
+        <S.CategoryId>ID da categoria: {Heroes.CategoryId}</S.CategoryId>
       </S.ContentId>
       <S.Image src={image} alt="heroi" />
-      <S.Name>{Heroes.Name}</S.Name>
+      <S.ContentNameAndCategory>
+        <S.Name>{Heroes.Name}</S.Name>
+        {Heroes.Category && (
+          <S.CategoryId>categoria: {Heroes.Category}</S.CategoryId>
+        )}
+      </S.ContentNameAndCategory>
+
       <S.Active active={Heroes.Active}>
         {Heroes.Active ? "ativo" : "desativado"}
       </S.Active>

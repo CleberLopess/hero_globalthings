@@ -43,6 +43,12 @@ export const Image = styled.img`
   height: 280px;
 `;
 
+export const ContentNameAndCategory = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+`;
+
 export const Name = styled.h2`
   font-size: 1.2em;
   text-transform: uppercase;

@@ -63,6 +63,12 @@ export const IDHero = styled.p`
   text-transform: uppercase;
 `;
 
+export const IDCategory = styled.p`
+  font-size: 1.5em;
+  color: #008000;
+  text-transform: uppercase;
+`;
+
 export const Category = styled.p`
   font-size: 1.5em;
   color: #008000;
@@ -112,6 +118,17 @@ export const Input = styled.input`
     cursor: pointer;
   }
 `;
+
+export const Select = styled.select`
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  width: 100%;
+  background-color: transparent;
+  height: 100%;
+`;
+
+export const Options = styled.option``;
 
 export const ContentButtonsModal = styled.div`
   display: flex;

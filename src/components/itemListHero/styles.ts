@@ -24,6 +24,7 @@ export const Content = styled.div`
 
 export const Image = styled.img`
   display: flex;
+  width: 80px;
 `;
 
 export const ContentInfo = styled.div`
@@ -48,6 +49,10 @@ export const IDHero = styled.p`
 `;
 
 export const IDCategory = styled.p`
+  color: #008000;
+`;
+
+export const Category = styled.p`
   color: #008000;
 `;
 

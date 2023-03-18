@@ -7,6 +7,7 @@ export const Content = styled.section`
   flex-direction: column;
   margin-top: 10px !important ;
   border-radius: 10px;
+  gap: 40px;
 `;
 
 export const Title = styled.h2`
@@ -19,6 +20,8 @@ export const From = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-bottom: 1px solid #bfbfbf;
+  padding-bottom: 40px;
 `;
 
 export const ContentInput = styled.div`
@@ -66,4 +69,10 @@ export const ButtonCancel = styled.button`
   :hover {
     background-color: #ca3744;
   }
+`;
+
+export const ContentCardCategory = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;

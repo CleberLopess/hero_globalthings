@@ -19,10 +19,17 @@ export const slice = createSlice({
     setCategory(state, { payload }: PayloadAction<ICategory[]>) {
       return { ...state, isLoading: false, category: payload };
     },
+    setNewCategory(state, { payload }: PayloadAction<ICategory>) {
+      return {
+        ...state,
+        isLoading: false,
+        category: [...state.category, payload],
+      };
+    },
   },
 });
 
-export const { setCategory } = slice.actions;
+export const { setCategory, setNewCategory } = slice.actions;
 
 export const selectcategory = (state: ICategoryState) => state;
 
