@@ -22,25 +22,25 @@ O consumo da API foi feito através do back-end do próprio Next.js para evitar 
 
 Voce vai precisar rodar o projeto (instrução a baixo) feito isso, ele ja estará pronto para ser utilizado, qualquer funcionalidade presente no site, estará funcionando corretamente.
 
-<h2>Instalar dependencias</h2>
+<h3>Instalar dependencias</h3>
 
 ```bash
 yarn
 ```
 
-<h2>Rodar o projeto em ambiente de desenvolvimento</h2>
+<h3>Rodar o projeto em ambiente de desenvolvimento</h3>
 
 ```bash
 yarn dev
 ```
 
-<h2>Buildar o projeto</h2>
+<h3>Buildar o projeto</h3>
 
 ```bash
 yarn build
 ```
 
-<h2>Rodar o projeto após o build</h2>
+<h3>Rodar o projeto após o build</h3>
 
 ```bash
 yarn start
