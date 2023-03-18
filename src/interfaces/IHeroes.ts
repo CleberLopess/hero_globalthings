@@ -5,4 +5,5 @@ export interface IHeroes {
   Name?: string;
   Active?: boolean;
   Category?: string;
+  CategoryId?: string;
 }

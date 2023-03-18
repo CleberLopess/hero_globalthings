@@ -6,5 +6,6 @@ export const Content = styled.section`
   padding: 10px 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 20px;
 `;

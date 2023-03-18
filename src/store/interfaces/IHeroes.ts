@@ -1,5 +1,3 @@
-import { ICategory } from "./ICategory";
-
 export interface IHeroesState {
   heroes: IHeroes[];
   isLoading: boolean;
@@ -10,4 +8,5 @@ export interface IHeroes {
   Name: string;
   Active: boolean;
   Category?: string;
+  CategoryId?: string;
 }
